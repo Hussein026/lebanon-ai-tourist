@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Taxi
+from .serializers import TaxiSerializer
 
-# Create your views here.
+class TaxiViewSet(viewsets.ModelViewSet):
+    queryset = Taxi.objects.all()
+    serializer_class = TaxiSerializer
