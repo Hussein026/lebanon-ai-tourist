@@ -6,6 +6,7 @@ from restaurants.views import RestaurantViewSet
 from places.views import PlaceViewSet
 from activities.views import ActivityViewSet
 from taxis.views import TaxiViewSet
+from chat.views import chat
 
 router = DefaultRouter()
 router.register(r'hotels', HotelViewSet)
@@ -17,4 +18,5 @@ router.register(r'taxis', TaxiViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/chat/', chat),
 ]
