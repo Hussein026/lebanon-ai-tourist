@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'taxis',
     'chat',
     'analytics',
+    'bookings',
 ]
 
 MIDDLEWARE = [

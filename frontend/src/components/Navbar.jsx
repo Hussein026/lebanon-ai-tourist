@@ -4,12 +4,13 @@ function Navbar() {
   const location = useLocation()
 
   const links = [
-    { path: '/', label: 'Home' },
-    { path: '/hotels', label: '🏨 Hotels' },
-    { path: '/restaurants', label: '🍽️ Restaurants' },
-    { path: '/places', label: '🏛️ Places' },
-    { path: '/chat', label: '🤖 AI Chat' },
-  ]
+  { path: '/', label: 'Home' },
+  { path: '/hotels', label: '🏨 Hotels' },
+  { path: '/restaurants', label: '🍽️ Restaurants' },
+  { path: '/places', label: '🏛️ Places' },
+  { path: '/map', label: '🗺️ Map' },
+  { path: '/chat', label: '🤖 AI Chat' },
+]
 
   return (
     <nav style={{

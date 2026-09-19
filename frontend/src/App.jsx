@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import Map from './pages/Map'
 import Hotels from './pages/Hotels'
 import Restaurants from './pages/Restaurants'
 import Places from './pages/Places'
@@ -17,6 +18,7 @@ function App() {
         <Route path="/restaurants" element={<Restaurants />} />
         <Route path="/places" element={<Places />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
   )
