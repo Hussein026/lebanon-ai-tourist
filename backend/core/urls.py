@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from rest_framework_simplejwt.views import TokenRefreshView
 from hotels.views import HotelViewSet
 from restaurants.views import RestaurantViewSet
 from places.views import PlaceViewSet
@@ -20,4 +21,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/chat/', chat),
     path('api/bookings/', include('bookings.urls')),
+    path('api/auth/', include('users.urls')),
+    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

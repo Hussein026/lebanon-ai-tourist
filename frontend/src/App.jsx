@@ -6,6 +6,8 @@ import Hotels from './pages/Hotels'
 import Restaurants from './pages/Restaurants'
 import Places from './pages/Places'
 import Chat from './pages/Chat'
+import Login from './pages/Login'
+import Register from './pages/Register'
 import './App.css'
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/places" element={<Places />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   )
