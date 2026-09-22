@@ -8,6 +8,8 @@ import Places from './pages/Places'
 import Chat from './pages/Chat'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Activities from './pages/Activities'
+import Dashboard from './pages/Dashboard'
 import './App.css'
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/map" element={<Map />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/activities" element={<Activities />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>

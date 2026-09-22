@@ -12,6 +12,8 @@ function Navbar() {
     { path: '/places', label: '🏛️ Places' },
     { path: '/map', label: '🗺️ Map' },
     { path: '/chat', label: '🤖 AI Chat' },
+    { path: '/dashboard', label: '🏛️ Dashboard' },
+    { path: '/activities', label: '🎯 Activities' },
   ]
 
   const logout = () => {
