@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BookingModal from '../components/BookingModal'
 
@@ -14,7 +14,7 @@ function Hotels() {
   }, [])
 
   return (
-    <div style={{ minHeight: '100vh', background: '#1a1a2e', padding: '40px 20px', color: 'white' }}>
+    <div style={{ minHeight: '100vh', background: '#1a1a2e', padding: '100px 20px 40px', color: 'white' }}>
       <h2 style={{ textAlign: 'center', color: '#e94560', fontSize: '36px' }}>🏨 Hotels in Lebanon</h2>
       <p style={{ textAlign: 'center', color: '#a8b2d8' }}>Find the best hotels across all governorates</p>
 
