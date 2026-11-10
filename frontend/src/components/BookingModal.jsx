@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
 export default function BookingModal({ item, type, onClose }) {
   const [form, setForm] = useState({
@@ -10,6 +10,7 @@ export default function BookingModal({ item, type, onClose }) {
   const handle = e => setForm({ ...form, [e.target.name]: e.target.value })
 
   const submit = async () => {
+    if (!localStorage.getItem('access_token')) { setStatus('login'); return }
     if (!form.full_name || !form.email || !form.phone) {
       setStatus('missing')
       return
@@ -18,7 +19,7 @@ export default function BookingModal({ item, type, onClose }) {
     try {
       const res = await fetch('http://localhost:8001/api/bookings/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('access_token') },
         body: JSON.stringify({
           booking_type: type,
           item_id: item.id,
@@ -149,6 +150,9 @@ export default function BookingModal({ item, type, onClose }) {
               📱 Book via WhatsApp
             </a>
 
+            {status === 'login' && (
+              <p style={{ color: '#f5a623', textAlign: 'center', marginTop: '12px' }}>Please sign in to send a booking request.</p>
+            )}
             {status === 'missing' && (
               <p style={{ color: '#f5a623', textAlign: 'center', marginTop: '12px' }}>
                 ⚠️ Please fill in Name, Email and Phone.

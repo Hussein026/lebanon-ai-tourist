@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+﻿import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 function Navbar() {
   const location = useLocation()
@@ -15,6 +15,8 @@ function Navbar() {
     { path: '/dashboard', label: '🏛️ Dashboard' },
     { path: '/activities', label: '🎯 Activities' },
   ]
+
+  if (user) links.push({ path: '/my-bookings', label: 'My Bookings' })
 
   const logout = () => {
     localStorage.removeItem('access_token')

@@ -1,13 +1,15 @@
-from django.db import models
+﻿from django.db import models
+from django.contrib.auth.models import User
+
 
 class Booking(models.Model):
     BOOKING_TYPE_CHOICES = [
-    ('hotel', 'Hotel'),
-    ('restaurant', 'Restaurant'),
-    ('activity', 'Activity'),
-    ('taxi', 'Taxi'),
-    ('place', 'Place'),
-]
+        ('hotel', 'Hotel'),
+        ('restaurant', 'Restaurant'),
+        ('activity', 'Activity'),
+        ('taxi', 'Taxi'),
+        ('place', 'Place'),
+    ]
 
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -15,17 +17,17 @@ class Booking(models.Model):
         ('cancelled', 'Cancelled'),
     ]
 
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='bookings')
+
     booking_type = models.CharField(max_length=20, choices=BOOKING_TYPE_CHOICES)
     item_id = models.IntegerField()
     item_name = models.CharField(max_length=255)
 
-    # Guest info
     full_name = models.CharField(max_length=255)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     nationality = models.CharField(max_length=100, blank=True)
 
-    # Booking details
     check_in = models.DateField(null=True, blank=True)
     check_out = models.DateField(null=True, blank=True)
     guests = models.IntegerField(default=1)
