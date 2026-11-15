@@ -1,6 +1,7 @@
 ﻿import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BookingModal from '../components/BookingModal'
+import CardImage from '../components/CardImage'
 
 const TYPE_LABELS = {
   all: '🌟 All',
@@ -63,7 +64,7 @@ function Activities() {
       <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '36px' }}>
         {Object.entries(TYPE_LABELS).map(([type, label]) => (
           <button key={type} onClick={() => setActiveType(type)} style={{
-            padding: '10px 22px', borderRadius: '25px', border: 'none',
+            padding: '10px 22px', borderRadius: '25px',
             cursor: 'pointer', fontWeight: '600', fontSize: '14px',
             background: activeType === type ? 'linear-gradient(135deg, #e94560, #f5a623)' : 'rgba(255,255,255,0.05)',
             color: activeType === type ? '#fff' : '#a8b2d8',
@@ -91,6 +92,7 @@ function Activities() {
               boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
               display: 'flex', flexDirection: 'column', gap: '8px'
             }}>
+              <CardImage src={a.image_url} alt={a.name} />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <h3 style={{ color: '#e94560', margin: 0, fontSize: '18px' }}>{a.name}</h3>
                 <span style={{

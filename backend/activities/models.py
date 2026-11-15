@@ -1,4 +1,4 @@
-from django.db import models
+﻿from django.db import models
 
 class Activity(models.Model):
     TYPE_CHOICES = [
@@ -15,6 +15,8 @@ class Activity(models.Model):
     governorate = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     duration = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+    image_url = models.URLField(max_length=500, blank=True)
     lat = models.FloatField(null=True, blank=True)
     lng = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

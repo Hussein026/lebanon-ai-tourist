@@ -1,0 +1,1040 @@
+[
+{
+  "model": "hotels.hotel",
+  "pk": 1,
+  "fields": {
+    "name": "Four Seasons Hotel Beirut",
+    "description": "Luxury 5-star hotel on the Beirut waterfront with stunning Mediterranean views.",
+    "location": "Al-Zeitouneh Street, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$$$",
+    "stars": 5,
+    "phone": "+961-1-761000",
+    "image_url": "https://tse1.mm.bing.net/th/id/OIP.6zoQppmpOn_aVLZ6dMjqLAHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "lat": 33.8938,
+    "lng": 35.4788,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 2,
+  "fields": {
+    "name": "Phoenicia Hotel Beirut",
+    "description": "Iconic landmark hotel in the heart of Beirut, offering world-class hospitality since 1961.",
+    "location": "Rue Fakhreddine, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$$",
+    "stars": 5,
+    "phone": "+961-1-369100",
+    "image_url": "https://tse3.mm.bing.net/th/id/OIP.JnoZliqUtxAzdDX4ZJMYnQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "lat": 33.8955,
+    "lng": 35.4812,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 3,
+  "fields": {
+    "name": "Mövenpick Hotel Beirut",
+    "description": "Contemporary hotel near Beirut city center with panoramic views.",
+    "location": "General de Gaulle Avenue, Raouche",
+    "governorate": "Beirut",
+    "price_range": "$$$",
+    "stars": 4,
+    "phone": "+961-1-869666",
+    "image_url": "https://th.bing.com/th/id/R.6970a4856764e015e052abfea51ea891?rik=tDuZeS0dPiEYZg&pid=ImgRaw&r=0",
+    "lat": 33.8889,
+    "lng": 35.4631,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 4,
+  "fields": {
+    "name": "Intercontinental Mzaar",
+    "description": "Mountain resort hotel in Mzaar Kfardebian, Lebanon's top ski destination.",
+    "location": "Mzaar Kfardebian",
+    "governorate": "Mount Lebanon",
+    "price_range": "$$$$",
+    "stars": 5,
+    "phone": "+961-9-340100",
+    "image_url": "https://digital.ihg.com/is/image/ihg/intercontinental-mzaar-4036027568-2x1",
+    "lat": 34.0736,
+    "lng": 35.6789,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 5,
+  "fields": {
+    "name": "Byblos Sur Mer",
+    "description": "Charming hotel by the ancient port of Byblos, one of the world's oldest cities.",
+    "location": "Byblos Port",
+    "governorate": "Mount Lebanon",
+    "price_range": "$$$",
+    "stars": 4,
+    "phone": "+961-9-548000",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Port_de_Byblos.JPG/960px-Port_de_Byblos.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.1236,
+    "lng": 35.6512,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 6,
+  "fields": {
+    "name": "Palmyra Hotel Baalbek",
+    "description": "Historic hotel in Baalbek, hosting luminaries since 1874 near the Roman temples.",
+    "location": "Baalbek City Center",
+    "governorate": "Baalbek-Hermel",
+    "price_range": "$$",
+    "stars": 3,
+    "phone": "+961-3-371127",
+    "image_url": "https://th.bing.com/th/id/R.c48cc7fe32c479216e2714629c0aaea8?rik=a0xKhdkF6nt%2bag&pid=ImgRaw&r=0",
+    "lat": 34.0042,
+    "lng": 36.2106,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 7,
+  "fields": {
+    "name": "Kanaan Boutique Hotel",
+    "description": "Cozy boutique hotel in Bcharre, gateway to the Cedars of God.",
+    "location": "Bcharre",
+    "governorate": "North Lebanon",
+    "price_range": "$$",
+    "stars": 3,
+    "phone": "",
+    "image_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/762965666.jpg?k=04f176c140731ee2d705cc701277fed9d60251e62715049bc315c5920fc9da05&o=",
+    "lat": 34.2517,
+    "lng": 36.0139,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 8,
+  "fields": {
+    "name": "Le Gray Beirut",
+    "description": "Award-winning boutique hotel in Downtown Beirut with rooftop pool.",
+    "location": "Downtown Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$$",
+    "stars": 5,
+    "phone": "+961-1-971111",
+    "image_url": "https://th.bing.com/th/id/R.ee099ed65320643b2ac0286bd18ea78a?rik=uHYwQm7cLWBfSQ&pid=ImgRaw&r=0",
+    "lat": 33.8975,
+    "lng": 35.5014,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 1,
+  "fields": {
+    "name": "Em Sherif",
+    "description": "Award-winning Lebanese cuisine in an elegant setting, considered one of the best in the Middle East.",
+    "cuisine_type": "Lebanese",
+    "location": "Metn, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$$",
+    "phone": "+961-70-919119",
+    "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/8f/b5/db/outdoor-seating.jpg?w=1400&h=800&s=1",
+    "is_vegetarian": false,
+    "lat": 33.8903,
+    "lng": 35.5423,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 2,
+  "fields": {
+    "name": "Tawlet",
+    "description": "Farm-to-table Lebanese restaurant run by rural women cooperatives, unique menu daily.",
+    "cuisine_type": "Lebanese",
+    "location": "Mar Mikhael, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$",
+    "phone": "+961-81-266060",
+    "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/bc/fd/d7/inside.jpg?w=1200&h=1200&s=1",
+    "is_vegetarian": false,
+    "lat": 33.8876,
+    "lng": 35.5198,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 3,
+  "fields": {
+    "name": "Liza Beirut",
+    "description": "Sophisticated Lebanese cuisine in a stunning 1930s mansion in Achrafieh.",
+    "cuisine_type": "Lebanese",
+    "location": "Achrafieh, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$",
+    "phone": "+961-71-717105",
+    "image_url": "https://i.pinimg.com/736x/4c/77/33/4c77335f5d969cad907375d58c22ebf1.jpg",
+    "is_vegetarian": false,
+    "lat": 33.8836,
+    "lng": 35.5145,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 4,
+  "fields": {
+    "name": "Babel Restaurant",
+    "description": "Rooftop dining with panoramic Beirut views, serving contemporary Lebanese cuisine.",
+    "cuisine_type": "Lebanese",
+    "location": "Dbayeh, Beirut",
+    "governorate": "Mount Lebanon",
+    "price_range": "$$$",
+    "phone": "",
+    "image_url": "https://tse2.mm.bing.net/th/id/OIP.CD9SspghFvpGUz0H9oqcPwHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "is_vegetarian": false,
+    "lat": 33.9167,
+    "lng": 35.5833,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 5,
+  "fields": {
+    "name": "Leila Restaurant",
+    "description": "Traditional Lebanese home cooking in a warm, authentic atmosphere.",
+    "cuisine_type": "Lebanese",
+    "location": "Hamra, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$",
+    "phone": "",
+    "image_url": "https://i.pinimg.com/736x/84/00/c6/8400c605cf3c0402f3f8e8ca1293982a.jpg",
+    "is_vegetarian": false,
+    "lat": 33.8942,
+    "lng": 35.4889,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 6,
+  "fields": {
+    "name": "Mounir Restaurant",
+    "description": "Famous grill restaurant in Zahle, known for its mezze and grilled meats by the river.",
+    "cuisine_type": "Lebanese Grill",
+    "location": "Zahle",
+    "governorate": "Bekaa",
+    "price_range": "$$",
+    "phone": "",
+    "image_url": "https://tse2.mm.bing.net/th/id/OIP.550sUHZbJFVPGu5yYJhK7AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "is_vegetarian": false,
+    "lat": 33.8469,
+    "lng": 35.9022,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 7,
+  "fields": {
+    "name": "Aleph Restaurant",
+    "description": "Trendy Beirut bistro blending Lebanese and Mediterranean flavors in Gemmayze.",
+    "cuisine_type": "Mediterranean",
+    "location": "Gemmayze, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$$",
+    "phone": "",
+    "image_url": "https://tse3.mm.bing.net/th/id/OIP.ig_vFWiOm-NXQQkS9TYKpwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "is_vegetarian": false,
+    "lat": 33.8889,
+    "lng": 35.5134,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "restaurants.restaurant",
+  "pk": 8,
+  "fields": {
+    "name": "Mayrig",
+    "description": "Authentic Armenian cuisine in Bourj Hammoud, beloved for its traditional recipes.",
+    "cuisine_type": "Armenian",
+    "location": "Bourj Hammoud, Beirut",
+    "governorate": "Beirut",
+    "price_range": "$$",
+    "phone": "",
+    "image_url": "https://th.bing.com/th/id/R.25bfb7f11a83e5b9cffbd04733688932?rik=UfxAGN1AkYtO5w&pid=ImgRaw&r=0",
+    "is_vegetarian": false,
+    "lat": 33.8914,
+    "lng": 35.5367,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 1,
+  "fields": {
+    "name": "Baalbek Roman Temples",
+    "description": "One of the best preserved Roman temple complexes in the world, featuring the Temple of Jupiter and Temple of Bacchus.",
+    "category": "historical",
+    "governorate": "Baalbek-Hermel",
+    "entrance_fee": "8.00",
+    "opening_hours": "8:00 AM - 6:00 PM",
+    "phone": "https://afsb.org/wp-",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Baalbek_-_temple_of_Jupiter.jpg/960px-Baalbek_-_temple_of_Jupiter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.0042,
+    "lng": 36.2106,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 2,
+  "fields": {
+    "name": "Jeita Grotto",
+    "description": "Stunning limestone caves with underground river, one of the natural wonders of the world.",
+    "category": "nature",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": "15.00",
+    "opening_hours": "9:00 AM - 5:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Jeita_Aerial_lift_1.jpg/960px-Jeita_Aerial_lift_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.9417,
+    "lng": 35.6389,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 3,
+  "fields": {
+    "name": "Byblos Ancient City",
+    "description": "One of the oldest continuously inhabited cities in the world, with Phoenician, Roman, and Crusader ruins.",
+    "category": "historical",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": "5.00",
+    "opening_hours": "8:00 AM - 7:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Byblos_ancient_ruins%2C_old_Phoenician_city_of_Byblos%2C_Lebanon.jpg/960px-Byblos_ancient_ruins%2C_old_Phoenician_city_of_Byblos%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.1236,
+    "lng": 35.6487,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 4,
+  "fields": {
+    "name": "Cedars of God",
+    "description": "Ancient cedar forest in Bcharre, one of the last remaining forests of the Lebanon Cedar, sacred trees mentioned in the Bible.",
+    "category": "nature",
+    "governorate": "North Lebanon",
+    "entrance_fee": "3.00",
+    "opening_hours": "8:00 AM - 6:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Cedars_of_God_%28Lebanon_cedar_forest%29%2C_Lebanon.jpg/960px-Cedars_of_God_%28Lebanon_cedar_forest%29%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.2481,
+    "lng": 36.0531,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 5,
+  "fields": {
+    "name": "Pigeon Rocks Beirut",
+    "description": "Natural arch rock formations off the coast of Raouche, Beirut's most iconic landmark.",
+    "category": "nature",
+    "governorate": "Beirut",
+    "entrance_fee": "0.00",
+    "opening_hours": "Open 24 hours",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/A_sunset_on_the_Mediterranean_sea%2C_Pigeon_Rocks%2C_Beirut%2C_Lebanon.jpg/960px-A_sunset_on_the_Mediterranean_sea%2C_Pigeon_Rocks%2C_Beirut%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.8889,
+    "lng": 35.4631,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 6,
+  "fields": {
+    "name": "Qadisha Valley",
+    "description": "UNESCO World Heritage Site — a sacred valley with ancient monasteries carved into cliffs.",
+    "category": "religious",
+    "governorate": "North Lebanon",
+    "entrance_fee": "0.00",
+    "opening_hours": "Open 24 hours",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/A_mystical_canyon_of_Qadisha_%28Holy%29_Valley_in_northern_Lebanon.jpg/960px-A_mystical_canyon_of_Qadisha_%28Holy%29_Valley_in_northern_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.2333,
+    "lng": 35.9833,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 7,
+  "fields": {
+    "name": "National Museum of Beirut",
+    "description": "Lebanon's principal public museum, housing artifacts from prehistoric times to the medieval period.",
+    "category": "cultural",
+    "governorate": "Beirut",
+    "entrance_fee": "5.00",
+    "opening_hours": "9:00 AM - 5:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/National_Museum_of_Beirut%2C_Beirut%2C_Lebanon.jpg/960px-National_Museum_of_Beirut%2C_Beirut%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.8736,
+    "lng": 35.5014,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 8,
+  "fields": {
+    "name": "Tyre Archaeological Site",
+    "description": "UNESCO World Heritage Site with Roman hippodrome, necropolis, and Crusader ruins.",
+    "category": "historical",
+    "governorate": "South Lebanon",
+    "entrance_fee": "6.00",
+    "opening_hours": "8:00 AM - 6:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Al_Mina_site%2C_Tyre%2C_Lebanon.jpg/960px-Al_Mina_site%2C_Tyre%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.2705,
+    "lng": 35.1983,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 9,
+  "fields": {
+    "name": "Our Lady of Lebanon",
+    "description": "Famous Marian shrine in Harissa, with a giant statue visible from Beirut and the sea.",
+    "category": "religious",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": "0.00",
+    "opening_hours": "6:00 AM - 8:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Our_Lady_of_Lebanon_church%2C_Harissa%2C_Jounieh%2C_Lebanon.jpg/960px-Our_Lady_of_Lebanon_church%2C_Harissa%2C_Jounieh%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.9833,
+    "lng": 35.65,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 10,
+  "fields": {
+    "name": "Sidon Sea Castle",
+    "description": "13th-century Crusader fortress built on a small island connected to the mainland by a bridge.",
+    "category": "historical",
+    "governorate": "South Lebanon",
+    "entrance_fee": "3.00",
+    "opening_hours": "8:00 AM - 6:00 PM",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Sidon_Sea_Castle%2C_Mediterranean_Sea%2C_Sidon%2C_Lebanon.jpg/960px-Sidon_Sea_Castle%2C_Mediterranean_Sea%2C_Sidon%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.5606,
+    "lng": 35.3717,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 11,
+  "fields": {
+    "name": "Anjar Umayyad City",
+    "description": "Anjar, also known as Hawsh Mousa, is a town of Lebanon, near the Syrian border, located in the Bekaa Valley. The population is 2,400, consisting almost entirely of Armenians. The total area is about twenty square kilometers.",
+    "category": "historical",
+    "governorate": "Bekaa",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Anjar_-_Cardo_vu_du_nord_2.jpg/960px-Anjar_-_Cardo_vu_du_nord_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.72583333,
+    "lng": 35.92972222,
+    "created_at": "2026-11-15T00:34:46.675Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 12,
+  "fields": {
+    "name": "Beiteddine Palace",
+    "description": "Beiteddine Palace is an 18th-century palace in Beiteddine, Lebanon, built by Bashir II. The palace hosts the annual Beiteddine Festival and the Beiteddine Palace Museum. and is also the residence of the President of Lebanon during the summer.",
+    "category": "historical",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Courtyard_at_Beiteddine_Palace_-_2009.jpg/960px-Courtyard_at_Beiteddine_Palace_-_2009.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.69621944,
+    "lng": 35.57993333,
+    "created_at": "2026-11-15T00:34:49.298Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 13,
+  "fields": {
+    "name": "Deir el Qamar",
+    "description": "Deir al-Qamar is a city south-east of Beirut in south-central Lebanon. It is located five kilometres outside of Beit ed-Dine in the Chouf District of the Mount Lebanon Governorate at 800 m of average altitude.",
+    "category": "historical",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Deir_El-Qamar_Minist%C3%A8re_du_tourisme.jpg/960px-Deir_El-Qamar_Minist%C3%A8re_du_tourisme.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.7,
+    "lng": 35.56666667,
+    "created_at": "2026-11-15T00:34:51.948Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 14,
+  "fields": {
+    "name": "Mohammad Al-Amin Mosque",
+    "description": "The Mohammad Al-Amin Mosque, also referred to as the Blue Mosque, is a Sunni mosque, 72 m high, minarets´ roof of 65 m high and main dome spire of 48 m high and its roof 42 m, is located in downtown Beirut, Lebanon. In the 19th century, a zawiya was built on this site.",
+    "category": "religious",
+    "governorate": "Beirut",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Mohammad_Al-Amin_Mosque_during_2019_Lebanese_revolution.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "lat": 33.89496944,
+    "lng": 35.50636944,
+    "created_at": "2026-11-15T00:34:54.565Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 15,
+  "fields": {
+    "name": "Sursock Museum",
+    "description": "The Sursock Museum, officially known as the Nicolas Ibrahim Sursock Museum, is a modern and contemporary art museum in Beirut, Lebanon.",
+    "category": "cultural",
+    "governorate": "Beirut",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Sursock_house.jpg/960px-Sursock_house.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.89294167,
+    "lng": 35.51622778,
+    "created_at": "2026-11-15T00:34:57.177Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 16,
+  "fields": {
+    "name": "Tripoli Citadel",
+    "description": "The Citadel of Tripoli is a 12th-century fortress in Tripoli, Lebanon. It was built at the top of a hill \"during the initial Frankish siege of the city between 1102 and 1109\" on the orders of Raymond de Saint-Gilles, who baptized it the Castle of Mount Pilgrim while local Muslims have been referring to it as the Castle...",
+    "category": "historical",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Citadel_of_Raymond_de_Saint-Gilles_2009.jpg/960px-Citadel_of_Raymond_de_Saint-Gilles_2009.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.4334,
+    "lng": 35.8445,
+    "created_at": "2026-11-15T00:34:59.816Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 17,
+  "fields": {
+    "name": "Gibran Museum",
+    "description": "The Gibran Museum, formerly the Monastery of Mar Sarkis, is a biographical museum in Bsharri, Lebanon, 120 kilometres from Beirut. It is dedicated to the Lebanese writer, philosopher, and artist Kahlil Gibran. The museum was an old cavern where many hermits sought refuge since the 7th century.",
+    "category": "cultural",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Gibran_Museum.JPG/960px-Gibran_Museum.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.24972222,
+    "lng": 36.01888889,
+    "created_at": "2026-11-15T00:35:02.483Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 18,
+  "fields": {
+    "name": "Horsh Ehden Nature Reserve",
+    "description": "Horsh Ehden is a nature reserve located in Northern Lebanon. It contains a forest of the cedar of Lebanon, making it a part of the country's cultural and natural heritage.",
+    "category": "nature",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Horosh_ehden_788.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "lat": 34.30833333,
+    "lng": 35.98305556,
+    "created_at": "2026-11-15T00:35:06.817Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 19,
+  "fields": {
+    "name": "Baatara Gorge Waterfall",
+    "description": "The Baatara gorge sinkhole is a waterfall in the Batroun district of Lebanon near the village of Chatine in the town of Tannourine. The waterfall drops 255 metres into the Balaa Pothole, a cave of Jurassic limestone located on the Lebanon Mountain Trail. The cave is also known as the Cave of the Three Bridges.",
+    "category": "nature",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Baatara_gorge.JPG/960px-Baatara_gorge.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.17343333,
+    "lng": 35.87036667,
+    "created_at": "2026-11-15T00:35:09.456Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 20,
+  "fields": {
+    "name": "Batroun",
+    "description": "Batroun, is a coastal city in northern Lebanon and one of the oldest continuously inhabited cities in the world. It is the capital city of Batroun District.",
+    "category": "cultural",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Batroun_port_IMG_1038.jpg/960px-Batroun_port_IMG_1038.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.25,
+    "lng": 35.65,
+    "created_at": "2026-11-15T00:35:12.094Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 21,
+  "fields": {
+    "name": "Mansouri Great Mosque",
+    "description": "The Mansouri Great Mosque is a mosque in Tripoli, Lebanon. It was built in the Mamluk period, from 1294 to 1298. This was the first building to be erected in Mamluk Tripoli.",
+    "category": "religious",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D9%8A_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1_%D9%81%D9%8A_%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3_%D8%B4%D9%85%D8%A7%D9%84_%D9%84%D8%A8%D9%86%D8%A7%D9%86.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "lat": 34.4345,
+    "lng": 35.8425,
+    "created_at": "2026-11-15T00:35:14.771Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 22,
+  "fields": {
+    "name": "Ksara Winery",
+    "description": "Château Ksara is a winery in Beqaa Valley of Lebanon. it is located in the town of Ksara near Zahle. It was founded in 1857 by Jesuit priests.",
+    "category": "cultural",
+    "governorate": "Bekaa",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Ch%C3%A2teau_Ksara_headquarters%2C_Bekaa%2C_Lebanon.JPG/960px-Ch%C3%A2teau_Ksara_headquarters%2C_Bekaa%2C_Lebanon.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.82611111,
+    "lng": 35.89194444,
+    "created_at": "2026-11-15T00:35:17.416Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 23,
+  "fields": {
+    "name": "Beaufort Castle",
+    "description": "Beaufort or Belfort Castle, known locally as Qal'at al-Shaqif or Shaqif Arnun, is a Crusader fortress in Nabatieh Governorate, Southern Lebanon, about 1 kilometre to the south-south-east of the village of Arnoun.",
+    "category": "historical",
+    "governorate": "Nabatieh",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/The_ruins_of_Beaufort_Castle_in_2022..jpg/960px-The_ruins_of_Beaufort_Castle_in_2022..jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.3244,
+    "lng": 35.532,
+    "created_at": "2026-11-15T00:35:20.074Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 24,
+  "fields": {
+    "name": "Saint George Maronite Cathedral",
+    "description": "Saint George Maronite Cathedral is the cathedral of the Maronite Catholic Archeparchy of Beirut, located in downtown Beirut, Lebanon. Constructed between 1884 and 1894 under Archbishop Joseph Debs, the cathedral stands on the site of an earlier 18th-century church dedicated to Saint George.",
+    "category": "religious",
+    "governorate": "Beirut",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/St._George_Maronite_Cathedral%2C_Beirut_%281%29.jpg/960px-St._George_Maronite_Cathedral%2C_Beirut_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.895272,
+    "lng": 35.50531,
+    "created_at": "2026-11-15T00:35:22.675Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 25,
+  "fields": {
+    "name": "Beirut Souks",
+    "description": "Beirut Souks is a commercial district located in the Beirut Central District. It comprises more than 200 retail outlets, approximately 25 restaurants and cafés, an entertainment center, a 14-screen cinema complex, periodic street markets, and a planned department store.",
+    "category": "cultural",
+    "governorate": "Beirut",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Beirut_Souks.jpg/960px-Beirut_Souks.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.89901667,
+    "lng": 35.50396667,
+    "created_at": "2026-11-15T00:35:29.662Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 26,
+  "fields": {
+    "name": "Tyre Coast Nature Reserve",
+    "description": "The Tyre Coast Nature Reserve is a nature reserve and a Ramsar site southeast of Tyre, Lebanon. Covering an area of over 380 hectares, it is bisected by the Rashidieh refugee camp.",
+    "category": "nature",
+    "governorate": "South Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/CoastNatureReserve-InfoStation-TyreSour_RomanDeckert26092019.jpg/960px-CoastNatureReserve-InfoStation-TyreSour_RomanDeckert26092019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.25077778,
+    "lng": 35.21275,
+    "created_at": "2026-11-15T00:35:32.291Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 27,
+  "fields": {
+    "name": "Mseilha Fort",
+    "description": "The Mseilha Fort is a historic fortification located in Northern Lebanon, strategically positioned on the right bank of Nahr al-Jaouz river, in Hamat, approximately 2.5 kilometers northeast of the city of Batroun in North Lebanon.",
+    "category": "historical",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Mseilha_fort%2C_Lebanon.jpg/960px-Mseilha_fort%2C_Lebanon.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.2738,
+    "lng": 35.6898,
+    "created_at": "2026-11-15T00:35:36.212Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 28,
+  "fields": {
+    "name": "Aammiq Wetland",
+    "description": "The Aammiq Wetland is the largest remaining freshwater wetland in Lebanon, a remnant of much more extensive marshes and lakes that once existed in the Bekaa Valley.",
+    "category": "nature",
+    "governorate": "Bekaa",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Ammiq_wetland.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "lat": 33.73143056,
+    "lng": 35.78898333,
+    "created_at": "2026-11-15T00:35:40.168Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 29,
+  "fields": {
+    "name": "Zahle",
+    "description": "Zahlé is a city in eastern Lebanon, and the capital and largest city of Beqaa Governorate, Lebanon. With around 150,000 inhabitants, it is the third-largest city in Lebanon after Beirut and Tripoli and the fourth-largest taking the whole urban area.",
+    "category": "cultural",
+    "governorate": "Bekaa",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Zahle%2CLebanon.JPG/960px-Zahle%2CLebanon.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.83333333,
+    "lng": 35.91666667,
+    "created_at": "2026-11-15T00:35:42.760Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 30,
+  "fields": {
+    "name": "Casino du Liban",
+    "description": "Casino du Liban is a casino located in Jounieh, Lebanon, 22 km north of Beirut. The casino is managed by Metropolitan Gaming, a subsidiary of Silver Point Capital.",
+    "category": "cultural",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/CasinoduLiban.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "lat": 34.014976,
+    "lng": 35.640513,
+    "created_at": "2026-11-15T00:35:46.718Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 31,
+  "fields": {
+    "name": "Jabal Moussa Biosphere Reserve",
+    "description": "Jabal Moussa Biosphere Reserve is a nature reserve located in the Keserwan District of Lebanon, on the shoulders of the western slopes of Mount Lebanon overlooking the Mediterranean Sea to the West.",
+    "category": "nature",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Jabal_Moussa_Biosphere_Reserve_03.jpg/960px-Jabal_Moussa_Biosphere_Reserve_03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.06220278,
+    "lng": 35.7694,
+    "created_at": "2026-11-15T00:35:50.651Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 32,
+  "fields": {
+    "name": "Qurnat as Sawda",
+    "description": "Qurnat as Sawdā is the highest point in Lebanon and the Levant, at 3,088 m above sea level. It is the summit of Jabal al Makmel, a mountain range in Bsharri, North Lebanon.",
+    "category": "nature",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Qurnat_as_sawda_early_summer.jpg/960px-Qurnat_as_sawda_early_summer.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.3,
+    "lng": 36.11666667,
+    "created_at": "2026-11-15T00:35:54.598Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 33,
+  "fields": {
+    "name": "Bsharri",
+    "description": "Bsharri is a Lebanese town located in the district of the same name, North Governorate, situated at altitudes between 1,100 m and 3,088 m. Bsharri is the location of the Cedars of God, a UNESCO World Heritage Site and the only remaining place where the Cedrus libani tree grows natively.",
+    "category": "cultural",
+    "governorate": "North Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Bsharri_%28Becharre%2C_Bsharre%29_village%2C_Kadisha_Valley%2C_Lebanon.jpg/960px-Bsharri_%28Becharre%2C_Bsharre%29_village%2C_Kadisha_Valley%2C_Lebanon.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 34.25111111,
+    "lng": 36.01111111,
+    "created_at": "2026-11-15T00:35:57.213Z"
+  }
+},
+{
+  "model": "places.place",
+  "pk": 34,
+  "fields": {
+    "name": "Jounieh",
+    "description": "Jounieh is a coastal city in Keserwan District, about 16 km north of Beirut, Lebanon. Since 2017, it has been the capital of Keserwan-Jbeil Governorate.",
+    "category": "cultural",
+    "governorate": "Mount Lebanon",
+    "entrance_fee": null,
+    "opening_hours": "",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Jounieh_Lebanon.jpg/960px-Jounieh_Lebanon.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "lat": 33.96972222,
+    "lng": 35.61555556,
+    "created_at": "2026-11-15T00:35:59.861Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 1,
+  "fields": {
+    "name": "Qadisha Valley Hiking",
+    "description": "Trek through the UNESCO-listed Qadisha Valley, one of the most dramatic gorges in Lebanon with ancient monasteries carved into cliffs.",
+    "type": "hiking",
+    "location": "Bcharre, Qadisha Valley",
+    "governorate": "North Lebanon",
+    "price": "15.00",
+    "duration": "Full day (6-8 hours)",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Road_to_the_Monastery_of_Qozhaya%2C_Kadisha-Qadisha_Holy_Valley%2C_Lebanon.jpg/960px-Road_to_the_Monastery_of_Qozhaya%2C_Kadisha-Qadisha_Holy_Valley%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.2333,
+    "lng": 35.9833,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 2,
+  "fields": {
+    "name": "Cedars Ski Resort",
+    "description": "Ski on Lebanon's oldest ski resort surrounded by the ancient Cedars of God forest. Open December to April.",
+    "type": "adventure",
+    "location": "Bcharre, The Cedars",
+    "governorate": "North Lebanon",
+    "price": "50.00",
+    "duration": "Full day",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Cedars_ski_resort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "lat": 34.2481,
+    "lng": 36.0531,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 3,
+  "fields": {
+    "name": "Jeita Grotto Boat Ride",
+    "description": "Take a boat ride through the lower cave of Jeita Grotto, gliding along an underground river surrounded by stunning stalactites.",
+    "type": "adventure",
+    "location": "Jeita, Jounieh",
+    "governorate": "Mount Lebanon",
+    "price": "18.00",
+    "duration": "2-3 hours",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/The_Guardian_of_Time_%28jeita_grotto%29.jpg/960px-The_Guardian_of_Time_%28jeita_grotto%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.9417,
+    "lng": 35.6389,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 4,
+  "fields": {
+    "name": "Baalbek Temple Tour",
+    "description": "Guided tour of the Roman temples of Baalbek, including the Temple of Jupiter and Temple of Bacchus with expert local guides.",
+    "type": "cultural",
+    "location": "Baalbek City Center",
+    "governorate": "Baalbek-Hermel",
+    "price": "25.00",
+    "duration": "3-4 hours",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Pano_Baalbek_1.jpg/960px-Pano_Baalbek_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.0042,
+    "lng": 36.2106,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 5,
+  "fields": {
+    "name": "Byblos Snorkeling",
+    "description": "Snorkel in the crystal-clear waters of Byblos along the ancient Phoenician coast, discovering underwater ruins and marine life.",
+    "type": "water",
+    "location": "Byblos Port",
+    "governorate": "Mount Lebanon",
+    "price": "30.00",
+    "duration": "2-3 hours",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Byblos_harbour_oil-polluted.jpg/960px-Byblos_harbour_oil-polluted.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 34.1236,
+    "lng": 35.6512,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 6,
+  "fields": {
+    "name": "Beirut Nightlife Tour",
+    "description": "Experience Beirut's legendary nightlife with a guided tour of Gemmayzeh, Mar Mikhael and Downtown's best bars and clubs.",
+    "type": "nightlife",
+    "location": "Gemmayzeh, Beirut",
+    "governorate": "Beirut",
+    "price": "40.00",
+    "duration": "Evening (5-6 hours)",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Beyrouth_-_Achrafieh_2.jpg/960px-Beyrouth_-_Achrafieh_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.8889,
+    "lng": 35.5134,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 7,
+  "fields": {
+    "name": "Harissa Cable Car",
+    "description": "Take the famous cable car (teleferique) from Jounieh bay up to the Our Lady of Lebanon shrine in Harissa with panoramic views.",
+    "type": "adventure",
+    "location": "Jounieh",
+    "governorate": "Mount Lebanon",
+    "price": "12.00",
+    "duration": "1-2 hours",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Harissa%2C_Lebanon_222.jpg/960px-Harissa%2C_Lebanon_222.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.9833,
+    "lng": 35.65,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 8,
+  "fields": {
+    "name": "Tyre Beach Day",
+    "description": "Relax on the stunning sandy beaches of Tyre, one of the best beaches in Lebanon near the UNESCO archaeological site.",
+    "type": "water",
+    "location": "Tyre",
+    "governorate": "South Lebanon",
+    "price": "10.00",
+    "duration": "Full day",
+    "phone": "",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Tyre_beach_panorama.jpg/960px-Tyre_beach_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "lat": 33.2705,
+    "lng": 35.1983,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 9,
+  "fields": {
+    "name": "Shouf Cedar Reserve Hiking",
+    "description": "Hike through the Shouf Cedar Biosphere Reserve, the largest nature reserve in Lebanon with ancient cedar trees and wildlife.",
+    "type": "hiking",
+    "location": "Barouk, Shouf",
+    "governorate": "Mount Lebanon",
+    "price": "10.00",
+    "duration": "4-5 hours",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Cedar_forest_inside_the_Al_Shouf_Cedar_Nature_Reserve.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "lat": 33.6833,
+    "lng": 35.6833,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": 10,
+  "fields": {
+    "name": "Sidon Soap Museum Tour",
+    "description": "Visit the famous Sidon Soap Museum housed in a 19th-century soap factory, exploring Lebanon's traditional soap-making heritage.",
+    "type": "cultural",
+    "location": "Sidon Old City",
+    "governorate": "South Lebanon",
+    "price": "5.00",
+    "duration": "1-2 hours",
+    "phone": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Soap_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "lat": 33.5606,
+    "lng": 35.3717,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+}
+]

@@ -1,4 +1,4 @@
-from django.db import models
+﻿from django.db import models
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=255)
@@ -8,6 +8,7 @@ class Restaurant(models.Model):
     governorate = models.CharField(max_length=100)
     price_range = models.CharField(max_length=50)
     phone = models.CharField(max_length=20, blank=True)
+    image_url = models.URLField(max_length=500, blank=True)
     is_vegetarian = models.BooleanField(default=False)
     lat = models.FloatField(null=True, blank=True)
     lng = models.FloatField(null=True, blank=True)

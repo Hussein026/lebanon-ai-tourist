@@ -39,8 +39,11 @@ export default function BookingModal({ item, type, onClose }) {
     }
   }
 
-  const whatsappMsg = `Hi! I'd like to book ${item.name}. Name: ${form.full_name}, Phone: ${form.phone}, Check-in: ${form.check_in}, Guests: ${form.guests}`
-  const whatsappUrl = `https://wa.me/96170000000?text=${encodeURIComponent(whatsappMsg)}`
+  const providerDigits = (item.phone || '').replace(/\D/g, '')
+  const whatsappMsg = `Hi! I'd like to book ${item.name} (${type}). Name: ${form.full_name}, Phone: ${form.phone}, Check-in: ${form.check_in}, Check-out: ${form.check_out}, Guests: ${form.guests}`
+  const whatsappUrl = providerDigits
+    ? `https://wa.me/${providerDigits}?text=${encodeURIComponent(whatsappMsg)}`
+    : null
 
   return (
     <div style={{
@@ -141,14 +144,24 @@ export default function BookingModal({ item, type, onClose }) {
               {status === 'loading' ? 'Submitting...' : 'Confirm Booking'}
             </button>
 
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" style={{
-              display: 'block', width: '100%', padding: '14px',
-              background: '#25D366', border: 'none', borderRadius: '10px',
-              color: '#fff', fontWeight: '700', fontSize: '16px',
-              textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
-            }}>
-              📱 Book via WhatsApp
-            </a>
+            {whatsappUrl ? (
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" style={{
+                display: 'block', width: '100%', padding: '14px',
+                background: '#25D366', border: 'none', borderRadius: '10px',
+                color: '#fff', fontWeight: '700', fontSize: '16px',
+                textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
+              }}>
+                📱 Book via WhatsApp
+              </a>
+            ) : (
+              <div style={{
+                width: '100%', padding: '14px', borderRadius: '10px',
+                background: 'rgba(255,255,255,0.05)', color: '#a8b2d8',
+                fontSize: '14px', textAlign: 'center', boxSizing: 'border-box'
+              }}>
+                📱 No WhatsApp number for this listing yet
+              </div>
+            )}
 
             {status === 'login' && (
               <p style={{ color: '#f5a623', textAlign: 'center', marginTop: '12px' }}>Please sign in to send a booking request.</p>
