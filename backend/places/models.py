@@ -1,4 +1,10 @@
 ﻿from django.db import models
+ACCESSIBILITY_CHOICES = [
+    ('unknown', 'Unknown'),
+    ('accessible', 'Wheelchair accessible'),
+    ('partial', 'Partly accessible'),
+    ('not_accessible', 'Not accessible'),
+]
 class Place(models.Model):
     CATEGORY_CHOICES = [
         ('historical', 'Historical'),
@@ -14,6 +20,7 @@ class Place(models.Model):
     opening_hours = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=20, blank=True)
     image_url = models.URLField(max_length=500, blank=True)
+    accessibility = models.CharField(max_length=20, choices=ACCESSIBILITY_CHOICES, default='unknown')
     lat = models.FloatField(null=True, blank=True)
     lng = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

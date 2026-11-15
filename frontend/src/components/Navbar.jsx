@@ -14,6 +14,8 @@ function Navbar() {
     { path: '/chat', label: '🤖 AI Chat' },
     { path: '/dashboard', label: '🏛️ Dashboard' },
     { path: '/activities', label: '🎯 Activities' },
+    { path: '/routes', label: '🥾 Hiking' },
+    { path: '/offers', label: '🏷️ Offers' },
   ]
 
   if (user) links.push({ path: '/my-bookings', label: 'My Bookings' })
@@ -31,7 +33,7 @@ function Navbar() {
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
       background: 'rgba(10, 10, 15, 0.95)', backdropFilter: 'blur(20px)',
       borderBottom: '1px solid rgba(233, 69, 96, 0.2)',
-      padding: '0 40px', height: '70px',
+      padding: '0 24px', height: '70px',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     }}>
       <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -43,13 +45,13 @@ function Navbar() {
         }}>LebanonAI</span>
       </Link>
 
-      <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: '2px', alignItems: 'center' }}>
         {links.map(link => (
           <Link key={link.path} to={link.path} style={{
             color: location.pathname === link.path ? '#e94560' : '#a8b2d8',
-            textDecoration: 'none', fontSize: '14px',
+            textDecoration: 'none', fontSize: '13px',
             fontWeight: location.pathname === link.path ? '700' : '500',
-            padding: '8px 16px', borderRadius: '25px',
+            padding: '8px 10px', borderRadius: '25px', whiteSpace: 'nowrap',
             background: location.pathname === link.path ? 'rgba(233,69,96,0.1)' : 'transparent',
             border: location.pathname === link.path ? '1px solid rgba(233,69,96,0.3)' : '1px solid transparent',
           }}>

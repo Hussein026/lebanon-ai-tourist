@@ -21,7 +21,10 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/chat/', chat),
     path('api/bookings/', include('bookings.urls')),
+    path('api/offers/', include('offers.urls')),
     path('api/auth/', include('users.urls')),
     path('api/analytics/', include('analytics.urls')),
     path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/reviews/', include('reviews.urls')),
+    path('api/routes/', include('routes.urls')),
 ]

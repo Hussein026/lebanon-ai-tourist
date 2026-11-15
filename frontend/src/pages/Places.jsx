@@ -1,18 +1,24 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BookingModal from '../components/BookingModal'
 import CardImage from '../components/CardImage'
+import AccessibilityBadge from '../components/AccessibilityBadge'
+import ReviewsBar from '../components/ReviewsBar'
+import { isRetired, isAccessible } from '../utils/accessibility'
+
 const selectStyle = {
   padding: '12px 18px', borderRadius: '25px',
   background: '#16213e', border: '1px solid rgba(255,255,255,0.1)',
   color: '#fff', fontSize: '14px', outline: 'none', cursor: 'pointer'
 }
+
 const FEE_OPTIONS = {
   all: '💰 All fees',
   free: 'Free',
   low: 'Up to $5',
   high: 'Over $5',
 }
+
 function matchesFee(fee, option) {
   if (option === 'all') return true
   if (fee === null || fee === undefined) return false
@@ -22,6 +28,7 @@ function matchesFee(fee, option) {
   if (option === 'high') return n > 5
   return true
 }
+
 function Places() {
   const [places, setPlaces] = useState([])
   const [loading, setLoading] = useState(true)
@@ -30,13 +37,18 @@ function Places() {
   const [region, setRegion] = useState('all')
   const [category, setCategory] = useState('all')
   const [fee, setFee] = useState('all')
+  const [accessibleOnly, setAccessibleOnly] = useState(false)
+  const retired = isRetired()
+
   useEffect(() => {
     axios.get('http://127.0.0.1:8001/api/places/')
       .then(res => { setPlaces(res.data); setLoading(false) })
       .catch(() => setLoading(false))
   }, [])
+
   const regions = [...new Set(places.map(p => p.governorate))].sort()
   const categories = [...new Set(places.map(p => p.category))].sort()
+
   const filtered = places.filter(p => {
     const q = search.toLowerCase()
     const matchSearch = !q ||
@@ -45,19 +57,25 @@ function Places() {
       p.category.toLowerCase().includes(q)
     const matchRegion = region === 'all' || p.governorate === region
     const matchCategory = category === 'all' || p.category === category
-    return matchSearch && matchRegion && matchCategory && matchesFee(p.entrance_fee, fee)
+    const matchAccess = !accessibleOnly || isAccessible(p)
+    return matchSearch && matchRegion && matchCategory && matchesFee(p.entrance_fee, fee) && matchAccess
   })
-  const hasFilters = search !== '' || region !== 'all' || category !== 'all' || fee !== 'all'
+
+  const hasFilters = search !== '' || region !== 'all' || category !== 'all' || fee !== 'all' || accessibleOnly
+
   function clearFilters() {
     setSearch('')
     setRegion('all')
     setCategory('all')
     setFee('all')
+    setAccessibleOnly(false)
   }
+
   return (
     <div style={{ minHeight: '100vh', background: '#1a1a2e', padding: '100px 20px 40px', color: 'white' }}>
       <h2 style={{ textAlign: 'center', color: '#e94560', fontSize: '36px' }}>🏛️ Places in Lebanon</h2>
       <p style={{ textAlign: 'center', color: '#a8b2d8' }}>Explore Lebanon's historical and natural wonders</p>
+
       <div style={{ maxWidth: '500px', margin: '24px auto 16px' }}>
         <input
           placeholder="🔍 Search places, regions, categories..."
@@ -70,6 +88,7 @@ function Places() {
           }}
         />
       </div>
+
       <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '16px' }}>
         <select value={region} onChange={e => setRegion(e.target.value)} style={selectStyle}>
           <option value="all">🏛️ All regions</option>
@@ -84,6 +103,14 @@ function Places() {
             <option key={value} value={value}>{label}</option>
           ))}
         </select>
+        {retired && (
+          <button onClick={() => setAccessibleOnly(!accessibleOnly)} style={{
+            ...selectStyle, fontWeight: '600',
+            background: accessibleOnly ? 'linear-gradient(135deg, #e94560, #f5a623)' : '#16213e'
+          }}>
+            ♿ Accessible &amp; partly accessible
+          </button>
+        )}
         {hasFilters && (
           <button onClick={clearFilters} style={{
             ...selectStyle, background: 'rgba(233,69,96,0.15)', color: '#e94560', fontWeight: '600'
@@ -92,11 +119,13 @@ function Places() {
           </button>
         )}
       </div>
+
       {!loading && places.length > 0 && (
         <p style={{ textAlign: 'center', color: '#a8b2d8', fontSize: '13px', margin: '0 0 8px' }}>
           Showing {filtered.length} of {places.length} places
         </p>
       )}
+
       {loading ? (
         <p style={{ textAlign: 'center', color: '#a8b2d8' }}>Loading places...</p>
       ) : places.length === 0 ? (
@@ -127,6 +156,8 @@ function Places() {
               {p.opening_hours && (
                 <p style={{ color: '#a8b2d8', margin: '5px 0' }}>🕐 {p.opening_hours}</p>
               )}
+              <AccessibilityBadge value={p.accessibility} />
+              <ReviewsBar type="place" item={p} />
               <p style={{ color: 'white', margin: '15px 0 0', lineHeight: '1.5', fontSize: '14px' }}>
                 {p.description}
               </p>
@@ -145,6 +176,7 @@ function Places() {
           ))}
         </div>
       )}
+
       {selected && (
         <BookingModal
           item={selected}
@@ -155,4 +187,5 @@ function Places() {
     </div>
   )
 }
+
 export default Places

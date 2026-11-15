@@ -11,6 +11,8 @@ import Register from './pages/Register'
 import MyBookings from './pages/MyBookings'
 import Activities from './pages/Activities'
 import Dashboard from './pages/Dashboard'
+import Offers from './pages/Offers'
+import HikingRoutes from './pages/HikingRoutes'
 import './App.css'
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/activities" element={<Activities />} />
+        <Route path="/offers" element={<Offers />} />
+        <Route path="/routes" element={<HikingRoutes />} />
         <Route path="/register" element={<Register />} />
         <Route path="/my-bookings" element={<MyBookings />} />
       </Routes>

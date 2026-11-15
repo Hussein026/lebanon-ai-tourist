@@ -1,7 +1,10 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BookingModal from '../components/BookingModal'
 import CardImage from '../components/CardImage'
+import AccessibilityBadge from '../components/AccessibilityBadge'
+import ReviewsBar from '../components/ReviewsBar'
+import { isRetired, isAccessible } from '../utils/accessibility'
 
 const selectStyle = {
   padding: '12px 18px', borderRadius: '25px',
@@ -17,6 +20,8 @@ function Restaurants() {
   const [region, setRegion] = useState('all')
   const [cuisine, setCuisine] = useState('all')
   const [price, setPrice] = useState('all')
+  const [accessibleOnly, setAccessibleOnly] = useState(false)
+  const retired = isRetired()
 
   useEffect(() => {
     axios.get('http://127.0.0.1:8001/api/restaurants/')
@@ -38,16 +43,18 @@ function Restaurants() {
     const matchRegion = region === 'all' || r.governorate === region
     const matchCuisine = cuisine === 'all' || r.cuisine_type === cuisine
     const matchPrice = price === 'all' || r.price_range === price
-    return matchSearch && matchRegion && matchCuisine && matchPrice
+    const matchAccess = !accessibleOnly || isAccessible(r)
+    return matchSearch && matchRegion && matchCuisine && matchPrice && matchAccess
   })
 
-  const hasFilters = search !== '' || region !== 'all' || cuisine !== 'all' || price !== 'all'
+  const hasFilters = search !== '' || region !== 'all' || cuisine !== 'all' || price !== 'all' || accessibleOnly
 
   function clearFilters() {
     setSearch('')
     setRegion('all')
     setCuisine('all')
     setPrice('all')
+    setAccessibleOnly(false)
   }
 
   return (
@@ -81,6 +88,14 @@ function Restaurants() {
           <option value="all">💰 All prices</option>
           {prices.map(x => <option key={x} value={x}>{x}</option>)}
         </select>
+        {retired && (
+          <button onClick={() => setAccessibleOnly(!accessibleOnly)} style={{
+            ...selectStyle, fontWeight: '600',
+            background: accessibleOnly ? 'linear-gradient(135deg, #e94560, #f5a623)' : '#16213e'
+          }}>
+            ♿ Accessible &amp; partly accessible
+          </button>
+        )}
         {hasFilters && (
           <button onClick={clearFilters} style={{
             ...selectStyle, background: 'rgba(233,69,96,0.15)', color: '#e94560', fontWeight: '600'
@@ -119,6 +134,8 @@ function Restaurants() {
               <p style={{ color: '#a8b2d8', margin: '5px 0' }}>🏛️ {r.governorate}</p>
               <p style={{ color: '#a8b2d8', margin: '5px 0' }}>🍴 {r.cuisine_type}</p>
               <p style={{ color: '#a8b2d8', margin: '5px 0' }}>💰 {r.price_range}</p>
+              <AccessibilityBadge value={r.accessibility} />
+              <ReviewsBar type="restaurant" item={r} />
               {r.is_vegetarian && (
                 <p style={{ color: '#4CAF50', margin: '5px 0' }}>🌱 Vegetarian Friendly</p>
               )}

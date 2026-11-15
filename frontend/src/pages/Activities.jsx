@@ -1,7 +1,10 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BookingModal from '../components/BookingModal'
 import CardImage from '../components/CardImage'
+import AccessibilityBadge from '../components/AccessibilityBadge'
+import ReviewsBar from '../components/ReviewsBar'
+import { isRetired, isAccessible } from '../utils/accessibility'
 
 const TYPE_LABELS = {
   all: '🌟 All',
@@ -19,6 +22,8 @@ function Activities() {
   const [selected, setSelected] = useState(null)
   const [activeType, setActiveType] = useState('all')
   const [search, setSearch] = useState('')
+  const [accessibleOnly, setAccessibleOnly] = useState(false)
+  const retired = isRetired()
 
   useEffect(() => {
     axios.get('http://127.0.0.1:8001/api/activities/')
@@ -29,13 +34,14 @@ function Activities() {
   useEffect(() => {
     let result = activities
     if (activeType !== 'all') result = result.filter(a => a.type === activeType)
+    if (accessibleOnly) result = result.filter(isAccessible)
     if (search) result = result.filter(a =>
       a.name.toLowerCase().includes(search.toLowerCase()) ||
       a.location.toLowerCase().includes(search.toLowerCase()) ||
       a.governorate.toLowerCase().includes(search.toLowerCase())
     )
     setFiltered(result)
-  }, [activeType, search, activities])
+  }, [activeType, search, accessibleOnly, activities])
 
   return (
     <div style={{ minHeight: '100vh', background: '#1a1a2e', padding: '100px 20px 40px', color: 'white' }}>
@@ -73,6 +79,16 @@ function Activities() {
             {label}
           </button>
         ))}
+        {retired && (
+          <button onClick={() => setAccessibleOnly(!accessibleOnly)} style={{
+            padding: '10px 22px', borderRadius: '25px',
+            cursor: 'pointer', fontWeight: '600', fontSize: '14px', color: '#fff',
+            background: accessibleOnly ? 'linear-gradient(135deg, #e94560, #f5a623)' : '#16213e',
+            border: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            ♿ Accessible &amp; partly accessible
+          </button>
+        )}
       </div>
 
       {loading ? (
@@ -108,6 +124,8 @@ function Activities() {
               <p style={{ color: '#f5a623', margin: 0, fontSize: '14px', fontWeight: '600' }}>
                 💰 ${a.price === '0.00' ? 'Free' : a.price}
               </p>
+              <AccessibilityBadge value={a.accessibility} />
+              <ReviewsBar type="activity" item={a} />
               <p style={{ color: 'white', margin: '8px 0 0', lineHeight: '1.6', fontSize: '14px' }}>
                 {a.description}
               </p>

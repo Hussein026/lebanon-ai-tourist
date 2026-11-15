@@ -1,7 +1,10 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import BookingModal from '../components/BookingModal'
 import CardImage from '../components/CardImage'
+import AccessibilityBadge from '../components/AccessibilityBadge'
+import ReviewsBar from '../components/ReviewsBar'
+import { isRetired, isAccessible } from '../utils/accessibility'
 
 const selectStyle = {
   padding: '12px 18px', borderRadius: '25px',
@@ -16,6 +19,8 @@ function Hotels() {
   const [search, setSearch] = useState('')
   const [region, setRegion] = useState('all')
   const [price, setPrice] = useState('all')
+  const [accessibleOnly, setAccessibleOnly] = useState(false)
+  const retired = isRetired()
 
   useEffect(() => {
     axios.get('http://127.0.0.1:8001/api/hotels/')
@@ -34,15 +39,17 @@ function Hotels() {
       h.governorate.toLowerCase().includes(q)
     const matchRegion = region === 'all' || h.governorate === region
     const matchPrice = price === 'all' || h.price_range === price
-    return matchSearch && matchRegion && matchPrice
+    const matchAccess = !accessibleOnly || isAccessible(h)
+    return matchSearch && matchRegion && matchPrice && matchAccess
   })
 
-  const hasFilters = search !== '' || region !== 'all' || price !== 'all'
+  const hasFilters = search !== '' || region !== 'all' || price !== 'all' || accessibleOnly
 
   function clearFilters() {
     setSearch('')
     setRegion('all')
     setPrice('all')
+    setAccessibleOnly(false)
   }
 
   return (
@@ -72,6 +79,14 @@ function Hotels() {
           <option value="all">💰 All prices</option>
           {prices.map(p => <option key={p} value={p}>{p}</option>)}
         </select>
+        {retired && (
+          <button onClick={() => setAccessibleOnly(!accessibleOnly)} style={{
+            ...selectStyle, fontWeight: '600',
+            background: accessibleOnly ? 'linear-gradient(135deg, #e94560, #f5a623)' : '#16213e'
+          }}>
+            ♿ Accessible &amp; partly accessible
+          </button>
+        )}
         {hasFilters && (
           <button onClick={clearFilters} style={{
             ...selectStyle, background: 'rgba(233,69,96,0.15)', color: '#e94560', fontWeight: '600'
@@ -110,6 +125,8 @@ function Hotels() {
               <p style={{ color: '#a8b2d8', margin: '5px 0' }}>🏛️ {hotel.governorate}</p>
               <p style={{ color: '#a8b2d8', margin: '5px 0' }}>⭐ {hotel.stars} Stars</p>
               <p style={{ color: '#a8b2d8', margin: '5px 0' }}>💰 {hotel.price_range}</p>
+              <AccessibilityBadge value={hotel.accessibility} />
+              <ReviewsBar type="hotel" item={hotel} />
               <p style={{ color: 'white', margin: '15px 0 0', lineHeight: '1.5', fontSize: '14px' }}>
                 {hotel.description}
               </p>
