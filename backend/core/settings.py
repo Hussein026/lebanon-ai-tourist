@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'offers',
     'reviews',
     'routes',
+    'recommendations',
 ]
 
 MIDDLEWARE = [

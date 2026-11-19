@@ -4,6 +4,7 @@ import BookingModal from '../components/BookingModal'
 import CardImage from '../components/CardImage'
 import AccessibilityBadge from '../components/AccessibilityBadge'
 import ReviewsBar from '../components/ReviewsBar'
+import VoiceGuideButton from '../components/VoiceGuideButton'
 import { isRetired, isAccessible } from '../utils/accessibility'
 
 const selectStyle = {
@@ -158,6 +159,7 @@ function Places() {
               )}
               <AccessibilityBadge value={p.accessibility} />
               <ReviewsBar type="place" item={p} />
+              <VoiceGuideButton placeId={p.id} />
               <p style={{ color: 'white', margin: '15px 0 0', lineHeight: '1.5', fontSize: '14px' }}>
                 {p.description}
               </p>

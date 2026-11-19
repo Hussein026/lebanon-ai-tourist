@@ -1,36 +1,56 @@
-import { useState } from 'react'
+﻿import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
+
+const SUGGESTIONS = [
+  'Which hotels are in Beirut?',
+  'Tell me about Jeita Grotto',
+  'Which hiking routes do you have?',
+  'Are there offers for me?',
+]
 
 function Chat() {
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Marhaba! 🇱🇧 I am your Lebanon AI guide. Ask me anything about hotels, restaurants, places, or activities in Lebanon!' }
+    {
+      role: 'assistant',
+      content: 'Marhaba! 🇱🇧 I am your Lebanon AI guide. I answer only from the LebanonAI listings: hotels, restaurants, places, activities, offers and hiking routes.',
+      sources: []
+    }
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [sessionId, setSessionId] = useState(null)
+  const bottomRef = useRef(null)
 
-  const sendMessage = async () => {
-    if (!input.trim()) return
+  useEffect(() => {
+    if (bottomRef.current) bottomRef.current.scrollIntoView({ behavior: 'smooth' })
+  }, [messages, loading])
 
-    const userMessage = { role: 'user', content: input }
-    setMessages(prev => [...prev, userMessage])
+  const sendMessage = async (text) => {
+    const content = (text !== undefined ? text : input).trim()
+    if (!content || loading) return
+
+    setMessages(prev => [...prev, { role: 'user', content, sources: [] }])
     setInput('')
     setLoading(true)
 
     try {
-      const response = await axios.post('http://127.0.0.1:8001/api/chat/', {
-        message: input,
-        session_id: sessionId
-      })
+      const token = localStorage.getItem('access_token')
+      const response = await axios.post(
+        'http://127.0.0.1:8001/api/chat/',
+        { message: content, session_id: sessionId },
+        { headers: token ? { Authorization: 'Bearer ' + token } : {}, timeout: 90000 }
+      )
       setSessionId(response.data.session_id)
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: response.data.message
+        content: response.data.message,
+        sources: response.data.sources || []
       }])
     } catch (error) {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: 'Sorry, something went wrong. Please try again.'
+        content: 'Sorry, something went wrong. Please try again.',
+        sources: []
       }])
     }
     setLoading(false)
@@ -43,7 +63,8 @@ function Chat() {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '30px 20px'
+      padding: '100px 20px 30px',
+      boxSizing: 'border-box'
     }}>
       <h2 style={{ color: '#e94560', marginBottom: '20px' }}>🤖 Lebanon AI Guide</h2>
 
@@ -53,9 +74,10 @@ function Chat() {
         background: '#16213e',
         borderRadius: '20px',
         padding: '20px',
-        height: '60vh',
+        height: '55vh',
         overflowY: 'auto',
-        marginBottom: '20px'
+        marginBottom: '16px',
+        boxSizing: 'border-box'
       }}>
         {messages.map((msg, i) => (
           <div key={i} style={{
@@ -68,10 +90,16 @@ function Chat() {
               color: 'white',
               padding: '12px 18px',
               borderRadius: msg.role === 'user' ? '20px 20px 5px 20px' : '20px 20px 20px 5px',
-              maxWidth: '70%',
-              lineHeight: '1.5'
+              maxWidth: '75%',
+              lineHeight: '1.5',
+              whiteSpace: 'pre-wrap'
             }}>
               {msg.content}
+              {msg.sources && msg.sources.length > 0 && (
+                <div style={{ marginTop: '8px', fontSize: '12px', color: '#a8b2d8' }}>
+                  Sources: {msg.sources.join(', ')}
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -80,19 +108,30 @@ function Chat() {
             AI is thinking... 🤔
           </div>
         )}
+        <div ref={bottomRef} />
       </div>
 
       <div style={{
-        display: 'flex',
-        gap: '10px',
-        width: '100%',
-        maxWidth: '800px'
+        display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center',
+        width: '100%', maxWidth: '800px', marginBottom: '12px'
       }}>
+        {SUGGESTIONS.map(s => (
+          <button key={s} onClick={() => sendMessage(s)} disabled={loading} style={{
+            background: 'rgba(255,255,255,0.06)', color: '#a8b2d8',
+            border: '1px solid rgba(255,255,255,0.15)', borderRadius: '20px',
+            padding: '6px 14px', fontSize: '13px', cursor: 'pointer'
+          }}>
+            {s}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ display: 'flex', gap: '10px', width: '100%', maxWidth: '800px' }}>
         <input
           value={input}
           onChange={e => setInput(e.target.value)}
-          onKeyPress={e => e.key === 'Enter' && sendMessage()}
-          placeholder="Ask about Lebanon... (in Arabic, English or French)"
+          onKeyDown={e => e.key === 'Enter' && sendMessage()}
+          placeholder="Ask about hotels, restaurants, places, activities, offers or hiking..."
           style={{
             flex: 1,
             padding: '15px 20px',
@@ -105,7 +144,7 @@ function Chat() {
           }}
         />
         <button
-          onClick={sendMessage}
+          onClick={() => sendMessage()}
           disabled={loading}
           style={{
             background: '#e94560',

@@ -1,0 +1,45 @@
+{
+  "voice": "en-US-AriaNeural",
+  "places": {
+    "1": {
+      "file": "place-1.mp3",
+      "name": "Baalbek Roman Temples"
+    },
+    "2": {
+      "file": "place-2.mp3",
+      "name": "Jeita Grotto"
+    },
+    "3": {
+      "file": "place-3.mp3",
+      "name": "Byblos Ancient City"
+    },
+    "4": {
+      "file": "place-4.mp3",
+      "name": "Cedars of God"
+    },
+    "5": {
+      "file": "place-5.mp3",
+      "name": "Pigeon Rocks Beirut"
+    },
+    "6": {
+      "file": "place-6.mp3",
+      "name": "Qadisha Valley"
+    },
+    "7": {
+      "file": "place-7.mp3",
+      "name": "National Museum of Beirut"
+    },
+    "8": {
+      "file": "place-8.mp3",
+      "name": "Tyre Archaeological Site"
+    },
+    "9": {
+      "file": "place-9.mp3",
+      "name": "Our Lady of Lebanon"
+    },
+    "10": {
+      "file": "place-10.mp3",
+      "name": "Sidon Sea Castle"
+    }
+  }
+}

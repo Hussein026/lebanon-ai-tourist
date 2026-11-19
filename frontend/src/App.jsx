@@ -13,6 +13,7 @@ import Activities from './pages/Activities'
 import Dashboard from './pages/Dashboard'
 import Offers from './pages/Offers'
 import HikingRoutes from './pages/HikingRoutes'
+import ForYou from './pages/ForYou'
 import './App.css'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/activities" element={<Activities />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/routes" element={<HikingRoutes />} />
+        <Route path="/for-you" element={<ForYou />} />
         <Route path="/register" element={<Register />} />
         <Route path="/my-bookings" element={<MyBookings />} />
       </Routes>
