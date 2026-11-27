@@ -1,29 +1,41 @@
-version: '3.9'
-
 services:
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: lebanon_ai
-      POSTGRES_USER: hussein
-      POSTGRES_PASSWORD: password123
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
   backend:
     build: ./backend
-    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - ./backend/.env
+    environment:
+      OLLAMA_URL: http://host.docker.internal:11434/api/chat
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./backend:/app
     ports:
-      - "8000:8000"
-    env_file:
-      - .env
+      - "8001:8001"
+    command:
+      - sh
+      - -c
+      - |
+        python manage.py migrate --noinput
+        python manage.py shell -c "from hotels.models import Hotel; raise SystemExit(0 if Hotel.objects.exists() else 1)" || python manage.py loaddata core/fixtures/listings_snapshot.json
+        python manage.py runserver 0.0.0.0:8001
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
     depends_on:
-      - db
+      - backend
+
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama
+    ports:
+      - "11435:11434"
+    volumes:
+      - ollama_data:/root/.ollama
 
 volumes:
-  postgres_data:
-  
+  ollama_data:
