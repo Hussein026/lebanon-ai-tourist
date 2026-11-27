@@ -1,26 +1,44 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const stats = [
-  { number: '6', label: 'Governorates' },
-  { number: '100+', label: 'Hotels' },
-  { number: '500+', label: 'Restaurants' },
-  { number: '50+', label: 'Historical Sites' },
+const API = 'http://localhost:8001/api'
+
+const KINDS = [
+  { key: 'hotels', label: 'Hotels' },
+  { key: 'restaurants', label: 'Restaurants' },
+  { key: 'places', label: 'Places' },
+  { key: 'activities', label: 'Activities' },
 ]
 
 const features = [
-  { icon: '🤖', title: 'AI Guide', desc: 'Chat in Arabic, English or French with your personal Lebanon travel assistant' },
-  { icon: '🗺️', title: 'Interactive Map', desc: 'Explore all hotels, restaurants and places on a live map with routes' },
-  { icon: '🎙️', title: 'Voice Guide', desc: 'Audio tours at Baalbek, Byblos and every historical site' },
-  { icon: '📸', title: 'Photo Recognition', desc: 'Point your camera at any landmark and get instant AI description' },
-  { icon: '🏨', title: 'Smart Booking', desc: 'AI books hotels and restaurants for you via WhatsApp instantly' },
-  { icon: '🥾', title: 'Hiking Routes', desc: 'Detailed trail guides for Qadisha Valley, Cedars and more' },
+  { icon: '\u{1F916}', title: 'AI Guide', desc: 'Ask about hotels, restaurants, places and activities. The AI answers only from our stored listings, in English.' },
+  { icon: '\u{1F5FA}', title: 'Interactive Map', desc: 'See all listings on a live map and click a pin for details.' },
+  { icon: '\u{1F399}', title: 'Voice Guide', desc: 'Listen to audio descriptions for selected places.' },
+  { icon: '\u{1F3F7}', title: 'Offers and Reviews', desc: 'See offers for your user group and read or write ratings.' },
+  { icon: '\u{1F3E8}', title: 'Booking Requests', desc: 'Send a booking request and open WhatsApp with a ready message.' },
+  { icon: '\u{1F97E}', title: 'Hiking Routes', desc: 'Trail routes with distance, difficulty and a line on the map.' },
 ]
 
 function Home() {
+  const [counts, setCounts] = useState({})
+
+  useEffect(() => {
+    KINDS.forEach(k => {
+      fetch(`${API}/${k.key}/`)
+        .then(r => r.json())
+        .then(d => {
+          const n = Array.isArray(d) ? d.length : (typeof d.count === 'number' ? d.count : null)
+          if (n !== null) setCounts(c => ({ ...c, [k.key]: n }))
+        })
+        .catch(() => {})
+    })
+  }, [])
+
+  const stats = KINDS.filter(k => counts[k.key] !== undefined)
+
   return (
     <div style={{ paddingTop: '70px' }}>
 
-      {/* Hero */}
       <div style={{
         minHeight: '100vh',
         background: 'linear-gradient(135deg, #0a0a0f 0%, #1a0a1e 50%, #0a1628 100%)',
@@ -33,7 +51,6 @@ function Home() {
         position: 'relative',
         overflow: 'hidden'
       }}>
-        {/* Background glow */}
         <div style={{
           position: 'absolute',
           width: '600px',
@@ -57,7 +74,7 @@ function Home() {
             marginBottom: '30px',
             fontWeight: '600'
           }}>
-            🇱🇧 Lebanon's First AI Tourism Platform
+            {'\u{1F1F1}\u{1F1E7}'} AI Tourism Platform for Lebanon
           </div>
 
           <h1 style={{
@@ -84,9 +101,8 @@ function Home() {
             lineHeight: '1.8',
             marginBottom: '50px'
           }}>
-            Your AI-powered travel companion. Find hotels, restaurants,
-            historical sites and activities — all guided by AI in Arabic,
-            English and French.
+            Find hotels, restaurants, historical places and activities,
+            with an AI guide that answers from our listings.
           </p>
 
           <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -100,7 +116,7 @@ function Home() {
               fontWeight: '700',
               boxShadow: '0 8px 30px rgba(233,69,96,0.4)',
             }}>
-              🤖 Chat with AI Guide
+              {'\u{1F916}'} Chat with AI Guide
             </Link>
             <Link to="/places" style={{
               background: 'rgba(255,255,255,0.05)',
@@ -112,35 +128,35 @@ function Home() {
               fontWeight: '700',
               border: '1px solid rgba(255,255,255,0.15)',
             }}>
-              🏛️ Explore Places
+              {'\u{1F3DB}'} Explore Places
             </Link>
           </div>
 
-          {/* Stats */}
-          <div style={{
-            display: 'flex',
-            gap: '50px',
-            marginTop: '80px',
-            justifyContent: 'center',
-            flexWrap: 'wrap'
-          }}>
-            {stats.map(s => (
-              <div key={s.label} style={{ textAlign: 'center' }}>
-                <div style={{
-                  fontSize: '42px',
-                  fontWeight: '900',
-                  background: 'linear-gradient(135deg, #e94560, #f5a623)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}>{s.number}</div>
-                <div style={{ color: '#a8b2d8', fontSize: '14px', marginTop: '5px' }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
+          {stats.length > 0 && (
+            <div style={{
+              display: 'flex',
+              gap: '50px',
+              marginTop: '80px',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              {stats.map(s => (
+                <div key={s.key} style={{ textAlign: 'center' }}>
+                  <div style={{
+                    fontSize: '42px',
+                    fontWeight: '900',
+                    background: 'linear-gradient(135deg, #e94560, #f5a623)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}>{counts[s.key]}</div>
+                  <div style={{ color: '#a8b2d8', fontSize: '14px', marginTop: '5px' }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Features */}
       <div style={{
         background: '#0d0d18',
         padding: '100px 40px',
@@ -151,9 +167,9 @@ function Home() {
           fontWeight: '800',
           marginBottom: '15px',
           color: 'white'
-        }}>Everything You Need</h2>
+        }}>What You Can Do</h2>
         <p style={{ color: '#a8b2d8', fontSize: '16px', marginBottom: '60px' }}>
-          Powered by AI — built exclusively for Lebanon
+          Built for visitors to Lebanon
         </p>
 
         <div style={{
@@ -170,7 +186,6 @@ function Home() {
               borderRadius: '20px',
               padding: '35px 30px',
               textAlign: 'left',
-              transition: 'all 0.3s ease',
               cursor: 'default'
             }}>
               <div style={{ fontSize: '40px', marginBottom: '20px' }}>{f.icon}</div>
@@ -181,7 +196,6 @@ function Home() {
         </div>
       </div>
 
-      {/* CTA */}
       <div style={{
         background: 'linear-gradient(135deg, #1a0a1e, #0a1628)',
         padding: '100px 40px',
@@ -191,7 +205,7 @@ function Home() {
           Ready to Explore Lebanon?
         </h2>
         <p style={{ color: '#a8b2d8', fontSize: '18px', marginBottom: '40px' }}>
-          Ask our AI anything — in your language
+          Ask our AI guide about hotels, restaurants, places and activities
         </p>
         <Link to="/chat" style={{
           background: 'linear-gradient(135deg, #e94560, #f5a623)',
@@ -203,7 +217,7 @@ function Home() {
           fontWeight: '700',
           boxShadow: '0 8px 30px rgba(233,69,96,0.4)',
         }}>
-          Start for Free →
+          Start Exploring
         </Link>
       </div>
 
