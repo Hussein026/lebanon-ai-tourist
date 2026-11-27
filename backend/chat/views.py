@@ -1,4 +1,4 @@
-﻿import re
+import re
 import unicodedata
 
 import requests
@@ -18,9 +18,10 @@ from restaurants.models import Restaurant
 from routes.models import HikingRoute
 from .models import ChatMessage, ChatSession
 
-OLLAMA_URL = 'http://localhost:11434/api/chat'
+import os
+OLLAMA_URL = os.environ.get('OLLAMA_URL', 'http://localhost:11434/api/chat')
 OLLAMA_MODEL = 'llama3.2'
-MAX_ITEMS = 8
+MAX_ITEMS = 5
 
 NO_INFO = "I don't have information about that in the LebanonAI database."
 NO_INFO_START = re.compile(r"\s*i\s+(do\s+not|don't|dont)\s+have\s+(any\s+)?(specific\s+)?information", re.I)
@@ -121,8 +122,8 @@ def access_fact(value):
 
 def make_item(kind, name, region_text, tag_text, desc, parts, access='', alias=''):
     short = (desc or '').strip()
-    if len(short) > 180:
-        short = short[:180].rsplit(' ', 1)[0] + '...'
+    if len(short) > 110:
+        short = short[:110].rsplit(' ', 1)[0] + '...'
     line = '- [%s] %s | %s' % (kind, name, ' | '.join(p for p in parts if p))
     if short:
         line += ' | about: ' + short
@@ -271,7 +272,7 @@ def ask_model(message, items, segment):
                 {'role': 'user', 'content': user_prompt},
             ],
             'stream': False,
-            'options': {'temperature': 0.1, 'num_predict': 300},
+            'options': {'temperature': 0.1, 'num_predict': 160, 'num_ctx': 2048},
             'keep_alive': '30m',
         }, timeout=90)
         resp.raise_for_status()
