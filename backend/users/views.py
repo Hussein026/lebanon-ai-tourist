@@ -1,4 +1,7 @@
-from django.contrib.auth.models import User
+﻿from django.contrib.auth.models import User
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -22,31 +25,51 @@ def user_data(user):
     }
 
 
+def clean(value, max_len):
+    return str(value or '').strip()[:max_len]
+
+
+def to_bool(value):
+    if isinstance(value, str):
+        return value.strip().lower() in ('true', '1', 'yes', 'on')
+    return bool(value)
+
+
 @api_view(['POST'])
 def register(request):
-    username = request.data.get('username')
-    email = request.data.get('email')
-    password = request.data.get('password')
+    username = clean(request.data.get('username'), 150)
+    email = clean(request.data.get('email'), 254).lower()
+    password = str(request.data.get('password') or '')
     segment = request.data.get('segment', 'tourist')
 
     if not username or not email or not password:
         return Response({'error': 'All fields are required.'}, status=400)
+    if len(username) < 3:
+        return Response({'error': 'Username must have at least 3 characters.'}, status=400)
+    try:
+        validate_email(email)
+    except ValidationError:
+        return Response({'error': 'Enter a valid email address.'}, status=400)
     if segment not in SEGMENTS:
         return Response({'error': 'Invalid segment.'}, status=400)
+    try:
+        validate_password(password, user=User(username=username, email=email))
+    except ValidationError as e:
+        return Response({'error': ' '.join(e.messages)}, status=400)
     if User.objects.filter(username=username).exists():
         return Response({'error': 'Username already taken.'}, status=400)
-    if User.objects.filter(email=email).exists():
+    if User.objects.filter(email__iexact=email).exists():
         return Response({'error': 'Email already registered.'}, status=400)
 
     user = User.objects.create_user(username=username, email=email, password=password)
     UserProfile.objects.create(
         user=user,
         segment=segment,
-        nationality=request.data.get('nationality', ''),
-        university=request.data.get('university', '') if segment == 'student' else '',
-        student_id=request.data.get('student_id', '') if segment == 'student' else '',
-        health_conditions=request.data.get('health_conditions', '') if segment == 'retired' else '',
-        mobility_issues=bool(request.data.get('mobility_issues', False)) if segment == 'retired' else False,
+        nationality=clean(request.data.get('nationality'), 100),
+        university=clean(request.data.get('university'), 255) if segment == 'student' else '',
+        student_id=clean(request.data.get('student_id'), 100) if segment == 'student' else '',
+        health_conditions=clean(request.data.get('health_conditions'), 1000) if segment == 'retired' else '',
+        mobility_issues=to_bool(request.data.get('mobility_issues', False)) if segment == 'retired' else False,
     )
     return Response({
         'message': 'Account created successfully.',
